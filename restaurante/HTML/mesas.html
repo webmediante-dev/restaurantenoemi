@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Table Management - Editorial Hospitality</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be_Vietnam_Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#fcf5ed",
+              "primary-container": "#ff7949",
+              "secondary-fixed": "#e4e2e1",
+              "on-background": "#312e29",
+              "surface": "#fcf5ed",
+              "outline-variant": "#b2aca5",
+              "error-container": "#fb5151",
+              "surface-variant": "#e3dcd2",
+              "on-secondary-fixed-variant": "#5c5b5b",
+              "on-secondary": "#f5f2f1",
+              "error": "#b31b25",
+              "inverse-primary": "#fe6a34",
+              "outline": "#7b7670",
+              "tertiary-dim": "#78308a",
+              "secondary-fixed-dim": "#d6d4d3",
+              "inverse-surface": "#100e0a",
+              "on-tertiary-fixed-variant": "#681f7a",
+              "on-primary": "#ffefeb",
+              "on-primary-fixed-variant": "#551600",
+              "background": "#fcf5ed",
+              "inverse-on-surface": "#a19c95",
+              "surface-tint": "#a63300",
+              "on-secondary-container": "#525151",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#451000",
+              "tertiary-container": "#ef9dff",
+              "surface-container-high": "#e9e1d8",
+              "on-tertiary": "#ffeefc",
+              "secondary-dim": "#504f4f",
+              "surface-container-highest": "#e3dcd2",
+              "surface-container": "#eee7de",
+              "on-error-container": "#570008",
+              "on-surface": "#312e29",
+              "primary-fixed": "#ff7949",
+              "surface-dim": "#dbd3c9",
+              "primary-dim": "#922c00",
+              "surface-container-low": "#f7f0e7",
+              "on-surface-variant": "#5f5b55",
+              "on-secondary-fixed": "#3f3f3f",
+              "primary": "#a63300",
+              "error-dim": "#9f0519",
+              "secondary": "#5c5b5b",
+              "primary-fixed-dim": "#f7652f",
+              "tertiary": "#853d97",
+              "secondary-container": "#e4e2e1",
+              "on-error": "#ffefee",
+              "on-tertiary-container": "#5e1470",
+              "on-tertiary-fixed": "#400050",
+              "tertiary-fixed-dim": "#e190f1",
+              "tertiary-fixed": "#ef9dff",
+              "on-primary-fixed": "#000000"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #fcf5ed;
+        }
+        .editorial-shadow {
+            box-shadow: 0 8px 32px rgba(49, 46, 41, 0.06);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf5ed]/80 dark:bg-stone-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-[#e9e1d8] dark:hover:bg-stone-800 transition-colors active:scale-95 duration-200 text-[#a63300]">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-extrabold text-[#312e29] dark:text-[#eee7de] font-['Plus_Jakarta_Sans'] tracking-tight">Table Management</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-[#e9e1d8] transition-colors active:scale-95 duration-200 text-[#5f5b55]">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-[#e9e1d8] transition-colors active:scale-95 duration-200 text-[#a63300]">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+<div class="bg-[#eee7de] dark:bg-stone-800 h-[1px] w-full"></div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Floor Selection & Legend -->
+<section class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-on-surface-variant font-medium text-sm tracking-widest uppercase mb-2 block">Current Zone</span>
+<h2 class="font-headline text-4xl font-bold text-on-surface">Main Dining Room</h2>
+</div>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest rounded-full border border-outline-variant/15 editorial-shadow">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-sm font-semibold text-on-surface-variant">Occupied (12)</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest rounded-full border border-outline-variant/15 editorial-shadow">
+<span class="w-3 h-3 rounded-full bg-surface-container-highest"></span>
+<span class="text-sm font-semibold text-on-surface-variant">Free (8)</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-lowest rounded-full border border-outline-variant/15 editorial-shadow">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="text-sm font-semibold text-on-surface-variant">Pending (2)</span>
+</div>
+</div>
+</section>
+<!-- Bento Table Map -->
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+<!-- Table Card: Occupied -->
+<div class="group relative aspect-square bg-surface-container-lowest rounded-xl p-6 editorial-shadow transition-all hover:scale-[1.02] cursor-pointer flex flex-col justify-between overflow-hidden">
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start z-10">
+<span class="text-3xl font-headline font-extrabold text-on-surface">01</span>
+<span class="material-symbols-outlined text-primary" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<div class="z-10">
+<p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">Occupied</p>
+<p class="text-sm text-on-surface-variant font-medium">4 Guests • 45m</p>
+</div>
+<div class="absolute -bottom-4 -right-4 opacity-10 group-hover:opacity-20 transition-all transform group-hover:-rotate-12">
+<span class="material-symbols-outlined text-9xl" data-icon="restaurant">restaurant</span>
+</div>
+</div>
+<!-- Table Card: Free -->
+<div class="group relative aspect-square bg-surface-container rounded-xl p-6 transition-all hover:bg-surface-container-high cursor-pointer flex flex-col justify-between overflow-hidden">
+<div class="flex justify-between items-start z-10">
+<span class="text-3xl font-headline font-extrabold text-on-surface-variant/40">02</span>
+<span class="material-symbols-outlined text-on-surface-variant/30" data-icon="check_circle">check_circle</span>
+</div>
+<div class="z-10">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Free</p>
+<p class="text-sm text-on-surface-variant/60 font-medium">Ready for guests</p>
+</div>
+</div>
+<!-- Table Card: Pending/Cleanup -->
+<div class="group relative aspect-square bg-surface-container-lowest rounded-xl p-6 editorial-shadow transition-all border-2 border-tertiary/20 cursor-pointer flex flex-col justify-between overflow-hidden">
+<div class="flex justify-between items-start z-10">
+<span class="text-3xl font-headline font-extrabold text-on-surface">03</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="cleaning_services">cleaning_services</span>
+</div>
+<div class="z-10">
+<p class="text-xs font-bold text-tertiary uppercase tracking-wider mb-1">Pending</p>
+<p class="text-sm text-on-surface-variant font-medium">Needs turnover</p>
+</div>
+</div>
+<!-- Large Feature Card (Asymmetric Layout) -->
+<div class="col-span-2 row-span-1 md:row-span-2 relative bg-primary-container rounded-xl p-8 editorial-shadow overflow-hidden flex flex-col justify-between group cursor-pointer">
+<div class="z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="px-3 py-1 bg-on-primary-container text-on-primary rounded-full text-[10px] font-bold tracking-widest uppercase">Premium Booth</span>
+</div>
+<h3 class="text-4xl font-headline font-extrabold text-on-primary-container leading-tight">Table 04<br/>Vip Lounge</h3>
+</div>
+<div class="z-10 mt-8">
+<div class="flex -space-x-3 mb-4">
+<img class="w-10 h-10 rounded-full border-2 border-primary-container object-cover" data-alt="portrait of a professional chef smiling in a kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM1--yb83oGjAIXSTOY9YCGmGNIdTJceDxYnXg8LbbqWaWhHUWHVHGDH_uUIaclLxRwGp5nyTUkRx_yo7bTLASU3r09Zy70q7MZDlKXs5eySRBD1ugTwVH6L9_CJasQe1QdUS6j9-Uli-YlH_SWWeFNVl8lD7AWl674zhqyBZGQqmNBv2LeYSZrHuzVjTw9mKh0xGzViVSDEXaIxTaIewJp58gQw6YMFBz0xFhOvAHFmKWSXrB4bvX4O2qYYhe4__-O4JOGHCa4p8"/>
+<img class="w-10 h-10 rounded-full border-2 border-primary-container object-cover" data-alt="portrait of a focused sommelier in a wine cellar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtvLCrtFawPS_NExfhlVlUzWmi2BnUFxF_dBP0xlsgzG3obv39OpekZi-QoimV9KavYQbYUqnJQ48PwUQpXyNbebDBsKLhhSkvEtGWhziPWB2vfwL_83kP8nWP7c_U1-nePK7sALpat3nEd0TDGujtghd5QHfLVAokunKCD8O2UeobrQJkNOqO-4qTGCsKe4FKd84kaLg9KReOMnnKrVGTdmmNlZrBKqnynS29_riDW5Q5ZmCfM1Vrb5JM8ctrH0LubosvmE8yid0"/>
+<div class="w-10 h-10 rounded-full border-2 border-primary-container bg-surface-container-lowest flex items-center justify-center text-[10px] font-bold text-primary">+2</div>
+</div>
+<p class="text-on-primary-container/80 font-medium">Reserved for Thompson Party</p>
+<p class="text-on-primary-container text-lg font-bold">19:30 Tonight</p>
+</div>
+<img class="absolute right-[-10%] top-[-10%] w-64 h-64 object-cover opacity-20 rounded-full mix-blend-overlay group-hover:scale-110 transition-transform duration-700" data-alt="elegant upscale restaurant dining room with warm ambient lighting and soft textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEltcmblYagCgtSGszZ32hqFd3vu1X4FNyDul2qJjGlnVtWH7ngQ-YtpWbljmNGq9Pybq_zibk5XuS1VH6YArcwnzFTZFbxIQT0IlWDFOhiZG1x5yI0p1KhAdFqbEBy6nHDJMLvTiReiqiEKQunGHXvZcH1sP-JE-c3ywkQpfM5If55Vzj6LfOKFOpVcURp5uLnBjYDyF6FAcrwqJ0flOmeQdz_IdqhDf7E_R0Z9xostGaM_P-oAXeEpaasyUusWz5PVByUl86uVk"/>
+</div>
+<!-- Row 2 Tables -->
+<div class="group relative aspect-square bg-surface-container-lowest rounded-xl p-6 editorial-shadow transition-all hover:scale-[1.02] cursor-pointer flex flex-col justify-between overflow-hidden">
+<div class="flex justify-between items-start z-10">
+<span class="text-3xl font-headline font-extrabold text-on-surface">05</span>
+<span class="material-symbols-outlined text-primary" data-icon="wine_bar" style="font-variation-settings: 'FILL' 1;">wine_bar</span>
+</div>
+<div class="z-10">
+<p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">Occupied</p>
+<p class="text-sm text-on-surface-variant font-medium">2 Guests • 1h 10m</p>
+</div>
+</div>
+<!-- Table Card: Free -->
+<div class="group relative aspect-square bg-surface-container rounded-xl p-6 transition-all hover:bg-surface-container-high cursor-pointer flex flex-col justify-between overflow-hidden">
+<div class="flex justify-between items-start z-10">
+<span class="text-3xl font-headline font-extrabold text-on-surface-variant/40">06</span>
+<span class="material-symbols-outlined text-on-surface-variant/30" data-icon="check_circle">check_circle</span>
+</div>
+<div class="z-10">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Free</p>
+<p class="text-sm text-on-surface-variant/60 font-medium">Ready for guests</p>
+</div>
+</div>
+<!-- More grid items to fill space editorial style -->
+<div class="group relative aspect-square bg-surface-container-lowest rounded-xl p-6 editorial-shadow transition-all hover:scale-[1.02] cursor-pointer flex flex-col justify-between overflow-hidden">
+<div class="flex justify-between items-start z-10">
+<span class="text-3xl font-headline font-extrabold text-on-surface">07</span>
+<span class="material-symbols-outlined text-primary" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<div class="z-10">
+<p class="text-xs font-bold text-primary uppercase tracking-wider mb-1">Occupied</p>
+<p class="text-sm text-on-surface-variant font-medium">6 Guests • 20m</p>
+</div>
+</div>
+<div class="group relative aspect-square bg-surface-container rounded-xl p-6 transition-all hover:bg-surface-container-high cursor-pointer flex flex-col justify-between overflow-hidden">
+<div class="flex justify-between items-start z-10">
+<span class="text-3xl font-headline font-extrabold text-on-surface-variant/40">08</span>
+<span class="material-symbols-outlined text-on-surface-variant/30" data-icon="check_circle">check_circle</span>
+</div>
+<div class="z-10">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Free</p>
+<p class="text-sm text-on-surface-variant/60 font-medium">Ready for guests</p>
+</div>
+</div>
+<!-- Table Card: Pending -->
+<div class="group relative aspect-square bg-surface-container-lowest rounded-xl p-6 editorial-shadow transition-all border-2 border-tertiary/20 cursor-pointer flex flex-col justify-between overflow-hidden">
+<div class="flex justify-between items-start z-10">
+<span class="text-3xl font-headline font-extrabold text-on-surface">09</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="timer">timer</span>
+</div>
+<div class="z-10">
+<p class="text-xs font-bold text-tertiary uppercase tracking-wider mb-1">Pending</p>
+<p class="text-sm text-on-surface-variant font-medium">Awaiting bill</p>
+</div>
+</div>
+<div class="group relative aspect-square bg-surface-container rounded-xl p-6 transition-all hover:bg-surface-container-high cursor-pointer flex flex-col justify-between overflow-hidden">
+<div class="flex justify-between items-start z-10">
+<span class="text-3xl font-headline font-extrabold text-on-surface-variant/40">10</span>
+<span class="material-symbols-outlined text-on-surface-variant/30" data-icon="check_circle">check_circle</span>
+</div>
+<div class="z-10">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1">Free</p>
+<p class="text-sm text-on-surface-variant/60 font-medium">Ready for guests</p>
+</div>
+</div>
+</div>
+<!-- Secondary Section: Performance Stats -->
+<section class="mt-16 bg-surface-container-low rounded-lg p-8 grid md:grid-cols-3 gap-12">
+<div>
+<h4 class="font-headline text-2xl font-bold mb-4">Floor Overview</h4>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Capacity</span>
+<span class="font-bold">68%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-primary h-full rounded-full w-[68%]"></div>
+</div>
+<p class="text-xs text-on-surface-variant">Busy period expected in 45 minutes.</p>
+</div>
+</div>
+<div class="md:border-l border-outline-variant/20 md:pl-12">
+<h4 class="font-headline text-2xl font-bold mb-4">Wait Times</h4>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-headline font-extrabold text-on-surface">15</span>
+<span class="text-on-surface-variant font-semibold">min avg.</span>
+</div>
+<p class="mt-2 text-sm text-on-surface-variant">Down 5m from previous hour.</p>
+</div>
+<div class="md:border-l border-outline-variant/20 md:pl-12">
+<h4 class="font-headline text-2xl font-bold mb-4">Quick Actions</h4>
+<div class="flex flex-wrap gap-2">
+<button class="bg-surface-container-highest px-4 py-2 rounded-full text-sm font-bold hover:bg-primary-container transition-colors">Combine Tables</button>
+<button class="bg-surface-container-highest px-4 py-2 rounded-full text-sm font-bold hover:bg-primary-container transition-colors">Block Zone</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#fcf5ed]/80 dark:bg-stone-900/80 backdrop-blur-xl border-t border-[#b2aca5]/15 shadow-[0_-4px_24px_rgba(49,46,41,0.06)] z-50">
+<!-- Floor (Active) -->
+<a class="flex flex-col items-center justify-center bg-[#ff7949] text-[#451000] rounded-full px-5 py-2 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold">Floor</span>
+</a>
+<!-- Orders -->
+<a class="flex flex-col items-center justify-center text-[#5f5b55] dark:text-[#b2aca5] px-5 py-2 hover:text-[#a63300] transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="receipt_long">receipt_long</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold">Orders</span>
+</a>
+<!-- Reservations -->
+<a class="flex flex-col items-center justify-center text-[#5f5b55] dark:text-[#b2aca5] px-5 py-2 hover:text-[#a63300] transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="event_seat">event_seat</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold">Reservations</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-[#5f5b55] dark:text-[#b2aca5] px-5 py-2 hover:text-[#a63300] transition-colors active:scale-90" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="settings">settings</span>
+<span class="font-['Be_Vietnam_Pro'] text-[11px] font-semibold">Settings</span>
+</a>
+</nav>
+<!-- Contextual FAB (Only on relevant screens) -->
+<button class="fixed right-6 bottom-24 w-16 h-16 bg-primary text-on-primary rounded-full editorial-shadow flex items-center justify-center transition-transform active:scale-95 z-40 group">
+<span class="material-symbols-outlined text-3xl group-hover:rotate-90 transition-transform duration-300" data-icon="add">add</span>
+</button>
+</body></html>
