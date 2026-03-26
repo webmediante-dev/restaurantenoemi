@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kitchen Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="/stylesCSS/styles.css"/>
+    <style>
+        .layout-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        @media (min-width: 768px) { .layout-grid { grid-template-columns: 2fr 1fr; } }
+    </style>
+</head>
+<body>
+    <header class="app-header">
+        <div class="contenido-header flex-between">
+            <div class="flex items-center gap-4">
+                <button class="btn-icon"><span class="material-symbols-outlined">arrow_back</span></button>
+                <h1 class="text-lg text-primary">Kitchen Management</h1>
+            </div>
+            <button class="btn-icon"><span class="material-symbols-outlined">settings</span></button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card flex-col md:flex-row flex-between mb-8" style="background: var(--surface-container); gap: 2rem;">
+            <div style="flex: 1; z-index: 10;">
+                <span class="text-xs font-extrabold uppercase tracking-widest" style="color: var(--primary-container);">Operations Hub</span>
+                <h2 class="text-4xl mt-2 mb-4">Master your menu data.</h2>
+                <p class="text-variant text-lg">Sincroniza tu inventario y platos con un simple archivo.</p>
+            </div>
+            <div style="flex: 1; position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-editorial);">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt6TohE8m8RGLDNM9dSqGtkF88PcNqJQMXWINHcVo9-zeU83p4pyIkDkk0l1ukVZTMJNCiRuJys3DK4TT-2hVvsHziBFNRcZCiyHdzWpPfUDb7pBFGlwivO2HoQDwkjm5n8Wuyx35PtQbaoYmq2VSUjG7EIXE5XsLcJHge6Nt7TFmpNnkgOd6YVgbayoM4GN0Ce82RV4rsU1qoBvJq7n1LQsLMuVINqihKlHC2733lQ5pQ50gPpsj-tXWSSiQpYLQjZtRmjaEitTQ" alt="Kitchen" style="width: 100%; height: 300px; object-fit: cover;"/>
+            </div>
+        </section>
+
+        <section class="layout-grid">
+            <div class="card flex-col flex-center text-center" style="padding: 3rem 2rem; gap: 1.5rem;">
+                <div class="btn-icon" style="width: 6rem; height: 6rem; display: flex; align-items: center; justify-content: center; background: var(--surface-container);">
+                    <span class="material-symbols-outlined text-4xl">inventory_2</span>
+                </div>
+                <div>
+                    <h3 class="text-2xl mb-1">Introduce el archivo .xlsx</h3>
+                    <p class="text-variant text-sm">(de las comidas del restaurante)</p>
+                </div>
+                <div class="file-dropzone" style="width: 100%; max-width: 400px;">
+                    <span class="material-symbols-outlined text-4xl text-variant mb-2">upload_file</span>
+                    <p class="font-bold text-variant">Drag and drop or click</p>
+                </div>
+                <button class="btn btn-primary">Upload Spreadsheet</button>
+            </div>
+
+            <div class="flex-col gap-6">
+                <div class="card" style="background: var(--surface-high);">
+                    <div class="flex-between mb-4">
+                        <h4 class="text-xl">Ajustes</h4>
+                        <span class="material-symbols-outlined text-primary">tune</span>
+                    </div>
+                    <ul class="flex-col gap-2">
+                        <li class="card flex-between card-hover" style="padding: 1rem; cursor: pointer; border-radius: var(--radius-full);">
+                            <div class="flex items-center gap-3"><span class="material-symbols-outlined" style="color: var(--primary-container);">notifications</span> <span class="text-sm font-bold">Alertas de Stock</span></div>
+                            <span class="material-symbols-outlined text-variant text-sm">chevron_right</span>
+                        </li>
+                        <li class="card flex-between card-hover" style="padding: 1rem; cursor: pointer; border-radius: var(--radius-full);">
+                            <div class="flex items-center gap-3"><span class="material-symbols-outlined" style="color: var(--primary-container);">schedule</span> <span class="text-sm font-bold">Horarios</span></div>
+                            <span class="material-symbols-outlined text-variant text-sm">chevron_right</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card flex-col" style="background: linear-gradient(to bottom right, var(--primary), var(--primary-container)); color: white; min-height: 160px; justify-content: flex-end; position: relative; overflow: hidden;">
+                    <span class="material-symbols-outlined" style="position: absolute; top: -1rem; right: -1rem; font-size: 6rem; opacity: 0.2;">auto_awesome</span>
+                    <h4 class="text-lg mb-1" style="color: white; z-index: 10;">¿Necesitas ayuda?</h4>
+                    <p class="text-sm" style="opacity: 0.9; z-index: 10;">Descarga la plantilla oficial para evitar errores.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="flex-center mt-8">
+            <button class="btn text-variant font-bold"><span class="material-symbols-outlined">home</span> Volver a Home</button>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <button class="nav-item"><span class="material-symbols-outlined">receipt_long</span><span class="text-xs mt-2">Orders</span></button>
+        <button class="nav-item"><span class="material-symbols-outlined">inventory_2</span><span class="text-xs mt-2">Inventory</span></button>
+        <button class="nav-item active-bg" style="transform: scale(1.1); margin-top: -1rem;"><span class="material-symbols-outlined icon-filled">outdoor_grill</span><span class="text-xs mt-2">Kitchen</span></button>
+        <button class="nav-item"><span class="material-symbols-outlined">group</span><span class="text-xs mt-2">Team</span></button>
+    </nav>
+</body>
+</html>
