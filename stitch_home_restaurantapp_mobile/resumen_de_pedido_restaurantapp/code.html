@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be_Vietnam_Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-container": "#451000",
+              "background": "#fcf5ed",
+              "on-surface": "#312e29",
+              "primary": "#a63300",
+              "surface-container-highest": "#e3dcd2",
+              "on-tertiary-fixed-variant": "#681f7a",
+              "surface-bright": "#fcf5ed",
+              "tertiary-fixed-dim": "#e190f1",
+              "primary-fixed-dim": "#f7652f",
+              "tertiary-container": "#ef9dff",
+              "on-surface-variant": "#5f5b55",
+              "tertiary": "#853d97",
+              "secondary-container": "#e4e2e1",
+              "surface": "#fcf5ed",
+              "inverse-on-surface": "#a19c95",
+              "on-error-container": "#570008",
+              "error": "#b31b25",
+              "on-secondary-fixed-variant": "#5c5b5b",
+              "secondary-dim": "#504f4f",
+              "surface-tint": "#a63300",
+              "on-tertiary-fixed": "#400050",
+              "primary-container": "#ff7949",
+              "error-container": "#fb5151",
+              "secondary": "#5c5b5b",
+              "primary-dim": "#922c00",
+              "on-tertiary-container": "#5e1470",
+              "on-primary": "#ffefeb",
+              "secondary-fixed": "#e4e2e1",
+              "on-error": "#ffefee",
+              "on-background": "#312e29",
+              "inverse-surface": "#100e0a",
+              "primary-fixed": "#ff7949",
+              "inverse-primary": "#fe6a34",
+              "surface-container": "#eee7de",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed": "#ef9dff",
+              "outline": "#7b7670",
+              "error-dim": "#9f0519",
+              "surface-container-high": "#e9e1d8",
+              "outline-variant": "#b2aca5",
+              "surface-dim": "#dbd3c9",
+              "on-secondary-container": "#525151",
+              "surface-container-low": "#f7f0e7",
+              "on-tertiary": "#ffeefc",
+              "on-primary-fixed-variant": "#551600",
+              "tertiary-dim": "#78308a",
+              "surface-variant": "#e3dcd2",
+              "secondary-fixed-dim": "#d6d4d3",
+              "on-secondary": "#f5f2f1",
+              "on-secondary-fixed": "#3f3f3f",
+              "on-primary-fixed": "#000000"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .receipt-perforation {
+            background-image: radial-gradient(circle, #eee7de 4px, transparent 4px);
+            background-size: 16px 1px;
+            background-repeat: repeat-x;
+        }
+        .receipt-edge {
+            mask-image: url("data:image/svg+xml,%3Csvg width='20' height='10' viewBox='0 0 20 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 5 0 10 10 Q 15 0 20 10' fill='black'/%3E%3C/svg%3E");
+            mask-size: 20px 10px;
+            mask-repeat: repeat-x;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf5ed]/80 dark:bg-stone-900/80 backdrop-blur-xl flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#eee7de] dark:hover:bg-stone-800 transition-colors text-[#a63300] dark:text-[#ff7949] active:scale-95 transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-['Plus_Jakarta_Sans'] font-bold text-lg tracking-tight text-[#a63300] dark:text-[#ff7949]">Your Order</h1>
+</div>
+<div class="w-10"></div> <!-- Spacer for symmetry -->
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Hero Section -->
+<div class="mb-10 text-center">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-container/20 text-primary mb-4">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+</div>
+<h2 class="font-headline font-extrabold text-3xl tracking-tight mb-2">Resumen de Cuenta</h2>
+<p class="text-on-surface-variant body-sm">Mesa 14 • Restaurante Editorial</p>
+</div>
+<!-- Receipt Content -->
+<div class="relative bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden flex flex-col pt-8">
+<!-- Items Section -->
+<div class="px-8 pb-8">
+<div class="flex flex-col gap-6">
+<!-- Item 1 -->
+<div class="flex items-start justify-between group">
+<div class="flex gap-4">
+<span class="font-headline font-bold text-primary">1x</span>
+<div>
+<h3 class="font-headline font-bold text-lg leading-tight">Salmón a la Naranja</h3>
+<p class="text-xs text-on-surface-variant font-medium uppercase tracking-wider mt-1">Plato Principal</p>
+</div>
+</div>
+<span class="font-headline font-bold text-lg">24.50€</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start justify-between group">
+<div class="flex gap-4">
+<span class="font-headline font-bold text-primary">1x</span>
+<div>
+<h3 class="font-headline font-bold text-lg leading-tight">Ensalada César Gourmet</h3>
+<p class="text-xs text-on-surface-variant font-medium uppercase tracking-wider mt-1">Entrante</p>
+</div>
+</div>
+<span class="font-headline font-bold text-lg">18.00€</span>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start justify-between group">
+<div class="flex gap-4">
+<span class="font-headline font-bold text-primary">1x</span>
+<div>
+<h3 class="font-headline font-bold text-lg leading-tight">Spritz del Bosque</h3>
+<p class="text-xs text-on-surface-variant font-medium uppercase tracking-wider mt-1">Bebida Artesanal</p>
+</div>
+</div>
+<span class="font-headline font-bold text-lg">11.00€</span>
+</div>
+</div>
+</div>
+<!-- Totals Section with Visual Separation -->
+<div class="bg-surface-container-low/50 px-8 py-8 flex flex-col gap-3">
+<!-- Subtotal -->
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-medium">Subtotal</span>
+<span class="font-medium">53.50€</span>
+</div>
+<!-- Tax -->
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-medium">IVA (10%)</span>
+<span class="font-medium">5.35€</span>
+</div>
+<!-- Perforated Divider -->
+<div class="my-4 h-[1px] w-full border-t border-dashed border-outline-variant/40 relative">
+<div class="absolute -left-10 -top-2 w-4 h-4 rounded-full bg-surface"></div>
+<div class="absolute -right-10 -top-2 w-4 h-4 rounded-full bg-surface"></div>
+</div>
+<!-- Grand Total -->
+<div class="flex justify-between items-center">
+<span class="font-headline font-extrabold text-2xl tracking-tight">Total</span>
+<span class="font-headline font-extrabold text-2xl tracking-tight text-primary">58.85€</span>
+</div>
+</div>
+<!-- Footer Note -->
+<div class="px-8 py-6 border-t border-outline-variant/10 text-center">
+<p class="text-xs text-on-surface-variant font-medium italic">Gracias por elegir una experiencia gourmet con nosotros.</p>
+</div>
+<!-- Bottom Receipt Zigzag (Visual Only) -->
+<div class="h-2 w-full bg-surface-container-low receipt-edge opacity-30"></div>
+</div>
+<!-- Order Information Cards -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container p-6 rounded-lg flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant uppercase font-bold tracking-widest">Entrega Estimada</p>
+<p class="font-headline font-bold">20 - 30 min</p>
+</div>
+</div>
+<div class="bg-surface-container p-6 rounded-lg flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant uppercase font-bold tracking-widest">Ubicación</p>
+<p class="font-headline font-bold">Terraza Principal</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex flex-col items-center bg-[#fcf5ed] dark:bg-stone-900 pb-safe px-6 pt-4 border-t border-[#b2aca5]/15 shadow-[0_-8px_32px_rgba(49,46,41,0.06)]">
+<button class="bg-gradient-to-br from-[#a63300] to-[#ff7949] text-white rounded-full py-4 px-12 w-full flex justify-center items-center shadow-lg hover:brightness-110 active:scale-[0.98] transition-all duration-200 group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform">check_circle</span>
+<span class="font-['Be_Vietnam_Pro'] text-sm font-bold uppercase tracking-widest">Confirmar Pedido</span>
+</div>
+</button>
+<div class="h-4"></div>
+</nav>
+</body></html>

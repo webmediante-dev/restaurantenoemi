@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RestaurantApp - Gourmet Delivery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-lowest": "#ffffff",
+              "inverse-surface": "#100e0a",
+              "on-surface": "#312e29",
+              "error-dim": "#9f0519",
+              "tertiary": "#853d97",
+              "primary-fixed": "#ff7949",
+              "error": "#b31b25",
+              "surface": "#fcf5ed",
+              "surface-dim": "#dbd3c9",
+              "surface-tint": "#a63300",
+              "on-secondary": "#f5f2f1",
+              "primary-fixed-dim": "#f7652f",
+              "surface-variant": "#e3dcd2",
+              "on-primary-fixed-variant": "#551600",
+              "surface-container-highest": "#e3dcd2",
+              "on-tertiary": "#ffeefc",
+              "on-secondary-container": "#525151",
+              "primary-container": "#ff7949",
+              "on-primary-container": "#451000",
+              "secondary-container": "#e4e2e1",
+              "on-background": "#312e29",
+              "secondary-fixed": "#e4e2e1",
+              "on-error": "#ffefee",
+              "outline": "#7b7670",
+              "on-tertiary-fixed": "#400050",
+              "inverse-primary": "#fe6a34",
+              "secondary-dim": "#504f4f",
+              "background": "#fcf5ed",
+              "tertiary-fixed-dim": "#e190f1",
+              "tertiary-fixed": "#ef9dff",
+              "secondary": "#5c5b5b",
+              "on-secondary-fixed": "#3f3f3f",
+              "on-primary-container": "#451000",
+              "outline-variant": "#b2aca5",
+              "on-primary": "#ffefeb",
+              "on-primary-fixed": "#000000",
+              "on-surface-variant": "#5f5b55",
+              "surface-bright": "#fcf5ed",
+              "on-secondary-fixed-variant": "#5c5b5b",
+              "on-error-container": "#570008",
+              "inverse-on-surface": "#a19c95",
+              "surface-container-high": "#e9e1d8",
+              "primary-dim": "#922c00",
+              "tertiary-dim": "#78308a",
+              "tertiary-container": "#ef9dff",
+              "secondary-fixed-dim": "#d6d4d3",
+              "surface-container-low": "#f7f0e7",
+              "on-tertiary-fixed-variant": "#681f7a",
+              "surface-container": "#eee7de",
+              "error-container": "#fb5151",
+              "primary": "#a63300"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-gap {
+            column-gap: 3.5rem;
+        }
+        .soft-glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopAppBar Component -->
+<header class="fixed top-0 w-full z-50 bg-[#fcf5ed]/80 dark:bg-stone-900/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#a63300] dark:text-[#ff7949] hover:bg-[#eee7de] transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-2xl font-extrabold text-[#312e29] dark:text-[#eee7de] font-headline tracking-tight">RestaurantApp</h1>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border-2 border-primary-container">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a friendly man with a neat beard, soft studio lighting, high-end editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzbuIceIsbnB85-gd5zL5tBhcNYlMOgM6DV5a_kP2G_ZWygjp7EgSH7aUGHS3nW8CNgdFrRE8HqHgDHXNRgIl3gU3o-Co1QyJpO_n0lIvRYpCXtXPNJFpYBUW7L8e_VM4yB43Mm9GPH0v-goS_fZQanYBC0UejIEXC_OUEughZD7HaGfW-fDKr0k4bT9iFm6ZctUJfmLe32Zkdu9ka6btocN5394FfzwARD7biUbrEXKthlfO1rg7QPNeqkdFoau2XDxqdgMTUQIo"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-12">
+<h2 class="font-headline font-extrabold text-4xl md:text-6xl text-on-surface leading-tight tracking-tight mb-4">
+                ¿Qué te apetece <span class="text-primary italic">comer</span> hoy?
+            </h2>
+<p class="text-on-surface-variant text-lg max-w-md">
+                Descubre los mejores sabores de la ciudad entregados directamente a tu puerta con un toque de elegancia.
+            </p>
+</section>
+<!-- Primary Actions: Bento Grid Layout -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14">
+<!-- Button 1: Pedir Comida -->
+<button class="group relative overflow-hidden bg-gradient-to-br from-primary to-primary-container p-8 rounded-xl flex flex-col justify-between items-start text-left h-48 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 active:scale-95">
+<div class="bg-on-primary/20 p-3 rounded-full">
+<span class="material-symbols-outlined text-on-primary text-3xl" data-icon="shopping_bag" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+</div>
+<div>
+<span class="text-on-primary font-headline font-bold text-xl block">Pedir Comida</span>
+<span class="text-on-primary/80 text-sm">Tus platos favoritos ahora</span>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" data-icon="restaurant">restaurant</span>
+</div>
+</button>
+<!-- Button 2: Restaurantes -->
+<button class="group bg-surface-container-low p-8 rounded-xl flex flex-col justify-between items-start text-left h-48 border border-outline-variant/15 transition-all duration-300 hover:bg-surface-container active:scale-95">
+<div class="bg-primary/10 p-3 rounded-full">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="map">map</span>
+</div>
+<div>
+<span class="text-on-surface font-headline font-bold text-xl block">Restaurantes</span>
+<span class="text-on-surface-variant text-sm">Explora el mapa gastronómico</span>
+</div>
+</button>
+<!-- Button 3: Escanear QR -->
+<button class="group bg-surface-container-lowest p-8 rounded-xl flex flex-col justify-between items-start text-left h-48 border border-outline-variant/15 shadow-sm transition-all duration-300 hover:bg-surface-container-low active:scale-95">
+<div class="bg-secondary-container p-3 rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl" data-icon="qr_code_scanner">qr_code_scanner</span>
+</div>
+<div>
+<span class="text-on-surface font-headline font-bold text-xl block">Escanear Código QR</span>
+<span class="text-on-surface-variant text-sm">Pide desde tu mesa</span>
+</div>
+</button>
+</section>
+<!-- Restaurantes Destacados Section -->
+<section class="space-y-8">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline font-bold text-2xl text-on-surface">Restaurantes Destacados</h3>
+<div class="h-1 w-12 bg-primary rounded-full mt-2"></div>
+</div>
+<button class="text-primary font-bold text-sm hover:underline">Ver todos</button>
+</div>
+<!-- Single Column Feed of Gourmet Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Gourmet Card 1 -->
+<article class="bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-300 hover:translate-y-[-8px]">
+<div class="relative p-3">
+<img alt="Plato Gourmet" class="w-full h-64 object-cover rounded-lg" data-alt="Gourmet roasted salmon with seasonal vegetables and microgreens, artistic overhead shot with warm natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaS32BO7DVzjuipSkZNMClScsAnyR__px9hC8kPKL0fRflhwWDEwVfxloZTwkRRPWy2RMM1dQXz-7sXK4i_WEk8OezVqpnPkOOiNPiAhIziv8pPTkIdxgW0hQzUoJEmRdBrAlPbACiKYxnz5UxNEUThqjQ1zD5DROgfbm8Rf0g-nkHtVWzfWFeA3P0Vr1xmBdtWrxOC27b3lplIQaOhwCvAPcOPQaV3_XMduxEvDwX0d3dpcWZb9NaL9yo_GlUAGgX5CWIBTQMeEs"/>
+<div class="absolute top-6 left-6">
+<span class="bg-tertiary-container text-on-tertiary-container text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-sm">Chef's Choice</span>
+</div>
+</div>
+<div class="p-6 pt-2">
+<div class="flex justify-between items-start mb-4">
+<h4 class="font-headline font-bold text-xl text-on-surface">Lumière Gastronomique</h4>
+<div class="flex items-center bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-amber-500 text-sm mr-1" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface font-bold text-sm">4.9</span>
+</div>
+</div>
+<div class="flex items-center text-on-surface-variant text-sm gap-4">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-lg mr-1" data-icon="schedule">schedule</span>
+                                25-35 min
+                            </div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-lg mr-1" data-icon="delivery_dining">delivery_dining</span>
+                                Envío Gratis
+                            </div>
+</div>
+</div>
+</article>
+<!-- Gourmet Card 2 -->
+<article class="bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-300 hover:translate-y-[-8px]">
+<div class="relative p-3">
+<img alt="Pizza Napolitana" class="w-full h-64 object-cover rounded-lg" data-alt="Authentic wood-fired Neapolitan pizza with bubbling mozzarella and fresh basil, moody Italian kitchen setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVGQKws-36mTNAIoB1WlW6UgAfMWop95643SR2TEWuLwhNBEyhpRWXq5eAHK9JhXnkXRw0u8-IM9daXX3J47i9FhgHJzOcAWSUdr8YnnnomvD8JlRl3-ExKbo_zoMEcl5_zYxISiUGatQrm0iXoYwLIf8BX-uBfqAc4jhoA3WyyBhxCP4WJGWx7fbJH0C6JiWKxCZ5jNmikCGwi8Z2XSPuMJ3p8s3LpQl53Yg1H0LwBUKl8xNILpZyrEgPAP8NTqVW0VrvQCr7TKw"/>
+</div>
+<div class="p-6 pt-2">
+<div class="flex justify-between items-start mb-4">
+<h4 class="font-headline font-bold text-xl text-on-surface">Il Forno Antico</h4>
+<div class="flex items-center bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-amber-500 text-sm mr-1" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface font-bold text-sm">4.7</span>
+</div>
+</div>
+<div class="flex items-center text-on-surface-variant text-sm gap-4">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-lg mr-1" data-icon="schedule">schedule</span>
+                                15-25 min
+                            </div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-lg mr-1" data-icon="payments">payments</span>
+                                $$
+                            </div>
+</div>
+</div>
+</article>
+<!-- Gourmet Card 3 -->
+<article class="bg-surface-container-lowest rounded-lg overflow-hidden transition-all duration-300 hover:translate-y-[-8px]">
+<div class="relative p-3">
+<img alt="Sushi Platter" class="w-full h-64 object-cover rounded-lg" data-alt="Vibrant assorted sushi and sashimi platter on a slate plate with wasabi and ginger, minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWmFOZwZDQCi1z-yKJFNj_DuMTbZ60vvJLmcbuhXebBEhVbj2XqBNY5XDFMZMQU58OY_cLAL68ED-EQGUUluzZEOxWvnlj_yftiUN7xk3thcvCL96Xw87t-91BHHHkJiEha4DzqWV3rxrEPa3SHyy-TcIDIxQjmFvxm1ofeeXGjC3CDcHHywMDW7q3bp9_1zrMfejs8r0DX4DClAPyM3MLl5NM4IQaTExR0sOi3bf07tFE8eJ9N0YPCDH586RFXrha4Jb6x_8aKZY"/>
+</div>
+<div class="p-6 pt-2">
+<div class="flex justify-between items-start mb-4">
+<h4 class="font-headline font-bold text-xl text-on-surface">Sakura Zen</h4>
+<div class="flex items-center bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-amber-500 text-sm mr-1" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface font-bold text-sm">4.8</span>
+</div>
+</div>
+<div class="flex items-center text-on-surface-variant text-sm gap-4">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-lg mr-1" data-icon="schedule">schedule</span>
+                                30-45 min
+                            </div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-primary text-lg mr-1" data-icon="restaurant_menu">restaurant_menu</span>
+                                Asian Fusion
+                            </div>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Component -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-8 pt-4 bg-[#ffffff]/80 dark:bg-stone-900/80 backdrop-blur-2xl rounded-t-[2.5rem] border-t border-[#b2aca5]/10 shadow-[0_-8px_30px_rgba(49,46,41,0.06)] md:hidden">
+<!-- Explorar (Active) -->
+<button class="flex flex-col items-center justify-center bg-[#ff7949] text-white rounded-full w-14 h-14 -mt-6 shadow-lg shadow-[#a63300]/20 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label text-[8px] font-semibold uppercase tracking-widest mt-0.5">Explorar</span>
+</button>
+<!-- Buscar -->
+<button class="flex flex-col items-center justify-center text-[#5f5b55] dark:text-[#b2aca5] opacity-60 hover:opacity-100 transition-opacity active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label text-[10px] font-semibold uppercase tracking-widest">Buscar</span>
+</button>
+<!-- Pedidos -->
+<button class="flex flex-col items-center justify-center text-[#5f5b55] dark:text-[#b2aca5] opacity-60 hover:opacity-100 transition-opacity active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-label text-[10px] font-semibold uppercase tracking-widest">Pedidos</span>
+</button>
+<!-- Perfil -->
+<button class="flex flex-col items-center justify-center text-[#5f5b55] dark:text-[#b2aca5] opacity-60 hover:opacity-100 transition-opacity active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label text-[10px] font-semibold uppercase tracking-widest">Perfil</span>
+</button>
+</nav>
+<!-- Navigation Drawer (Hidden by default, structure provided) -->
+<aside class="fixed inset-y-0 left-0 z-[60] w-80 bg-[#fcf5ed] dark:bg-stone-950 rounded-r-[3rem] h-full shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out">
+<div class="p-8">
+<div class="flex items-center gap-4 mb-10">
+<div class="w-16 h-16 rounded-full bg-primary-container overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Portrait of a user" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgNfhAYo3wcMLbP7xOfowES_PUguOFqoJD1lCbQkhqkNJUBzYiVN4KthcJgQ3KrznYIpuTBXIWx1iuJQ7c9z15_uha8yjyCKttiNAluEErjNPld2WzFyKEBToRruJvH3DPjoEY5NNW0h3CWyXzURZ8duCHlVnZO9Ng3xvkpiTKuqnwNITX9okQChRG0qH2betpnAOKlQSAxJxn3zCJLSiYRVAUKPCqOxuDS4ofeAscxJLk9ka29N2ulesxG4YLsP_jCrWcgnS6YUs"/>
+</div>
+<div>
+<h5 class="font-headline font-bold text-on-surface text-xl">Hola, Gourmet</h5>
+<p class="text-on-surface-variant text-sm font-medium">Miembro Gold</p>
+</div>
+</div>
+<nav class="space-y-4">
+<a class="flex items-center gap-4 bg-[#ff7949] text-white rounded-full mx-2 py-3 px-6" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-headline font-medium">Inicio</span>
+</a>
+<a class="flex items-center gap-4 text-[#5f5b55] dark:text-[#b2aca5] px-4 py-3 hover:bg-[#eee7de] dark:hover:bg-stone-800 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-headline font-medium">Mis Pedidos</span>
+</a>
+<a class="flex items-center gap-4 text-[#5f5b55] dark:text-[#b2aca5] px-4 py-3 hover:bg-[#eee7de] dark:hover:bg-stone-800 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-headline font-medium">Favoritos</span>
+</a>
+<a class="flex items-center gap-4 text-[#5f5b55] dark:text-[#b2aca5] px-4 py-3 hover:bg-[#eee7de] dark:hover:bg-stone-800 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+<span class="font-headline font-medium">Promociones</span>
+</a>
+<hr class="border-outline-variant/20 mx-4 my-4"/>
+<a class="flex items-center gap-4 text-[#5f5b55] dark:text-[#b2aca5] px-4 py-3 hover:bg-[#eee7de] dark:hover:bg-stone-800 rounded-xl transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-headline font-medium">Ajustes</span>
+</a>
+</nav>
+</div>
+</aside>
+</body></html>
